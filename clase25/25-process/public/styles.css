@@ -1,14 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 body {
   min-height: 100vh;
 }
 
 #background {
-  background-image: url("/fondo.webp");
+  background-image: url("./image1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
