@@ -5,7 +5,7 @@ import {
   readOne,
   update,
   destroy,
-} from "../../controllers/events.controller.js";
+} from "../../events.controller.js";
 
 class EventsRouter extends CustomRouter {
   init() {
