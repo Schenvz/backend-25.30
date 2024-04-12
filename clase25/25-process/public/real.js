@@ -28,7 +28,6 @@ document.querySelector("#newEvent").addEventListener("click", (event) => {
   poster && (data.poster = poster);
   price && (data.price = price);
   capacity && (data.capacity = capacity);
-  place && (data.place = place);
   date && (data.date = date);
   socket.emit("newMovie", data);
 });
