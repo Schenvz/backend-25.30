@@ -12,7 +12,7 @@ const schema = new Schema(
     role: { type: Number, default: 0 },
     photo: {
       type: String,
-      default: "https://i.postimg.cc/wTgNFWhR/profile.png",
+      default: "https://postimg.cc/2LZMLR0D",
     },
   },
   { timestamps: true }

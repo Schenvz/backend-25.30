@@ -6,7 +6,7 @@ import {
   update,
   destroy,
 } from "../../controllers/comments.controller.js";
-
+//importo todo, no lo escribo
 class CommentsRouter extends CustomRouter {
   init() {
     this.create("/", ["USER", "PREM"], create);

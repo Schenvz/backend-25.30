@@ -1,4 +1,4 @@
-import { users } from "../data/mongo/manager.mongo.js";
+import { users } from "../manager.mongo.js";
 
 class UsersService {
   constructor() {
