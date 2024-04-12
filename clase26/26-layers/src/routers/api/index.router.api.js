@@ -6,7 +6,7 @@ import EventsRouter from "./events.router.api.js";
 import ordersRouter from "./orders.router.api.js";
 import sessionsRouter from "./sessions.router.api.js";
 
-import passCallBackMid from "../../middlewares/passCallBack.mid.js";
+import passCallBackMid from "../../passCallBack.mid.js";
 
 const event = new EventsRouter();
 
