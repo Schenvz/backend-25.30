@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import { orders } from "../../data/mongo/manager.mongo.js";
 
-import passCallBack from "../../middlewares/passCallBack.mid.js"
+import passCallBack from "../../middlewares/passCallBack.mid.js";
 
 const ordersRouter = Router();
 

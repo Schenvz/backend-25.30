@@ -12,7 +12,7 @@ export default class CustomRouter {
   }
   init() {}
   applyCbs(cbs) {
-    //cbs es un array de callbacks (por ejemplo todos los middlewares que necesita el endpoint /api/sessions/signout)
+    //cbs = array callbacks
     return cbs.map((each) => async (...params) => {
       try {
         await each.apply(this, params);

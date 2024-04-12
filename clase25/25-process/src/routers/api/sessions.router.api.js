@@ -9,10 +9,6 @@ const sessionsRouter = Router();
 sessionsRouter.post(
   "/register",
   has8char,
-/*   passport.authenticate("register", {
-    session: false,
-    failureRedirect: "/api/sessions/badauth",
-  }), */
   passCallBack("register"),
   async (req, res, next) => {
     try {
@@ -25,34 +21,54 @@ sessionsRouter.post(
     }
   }
 );
-
 //login
-sessionsRouter.post(
-  "/login",
-  passCallBack("login"),
-  async (req, res, next) => {
-    try {
-      return res
-        .cookie("token", req.token, {
-          maxAge: 7 * 24 * 60 * 60 * 1000,
-          httpOnly: true,
-        })
-        .json({
-          statusCode: 200,
-          message: "Logged in!",
-        });
-    } catch (error) {
-      return next(error);
-    }
+sessionsRouter.post("/login", passCallBack("login"), async (req, res, next) => {
+  try {
+    return res
+      .cookie("token", req.token, {
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      .json({
+        statusCode: 200,
+        message: "Logged in!",
+      });
+  } catch (error) {
+    return next(error);
   }
-);
-
+});
 //google
 sessionsRouter.post(
   "/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
-
+//me
+sessionsRouter.post("/", passCallBack("jwt"), async (req, res, next) => {
+  try {
+    const user = {
+      email: req.user.email,
+      role: req.user.role,
+      photo: req.user.photo,
+    };
+    return res.json({
+      statusCode: 200,
+      response: user,
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
+//signout
+sessionsRouter.post("/signout", passCallBack("jwt"), async (req, res, next) => {
+  try {
+    return res.clearCookie("token").json({
+      statusCode: 200,
+      message: "Signed out!",
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
 //google-callback
 sessionsRouter.get(
   "/google/callback",
@@ -72,13 +88,11 @@ sessionsRouter.get(
     }
   }
 );
-
 //google
 sessionsRouter.post(
   "/github",
   passport.authenticate("github", { scope: ["user:email"] })
 );
-
 //github-callback
 sessionsRouter.get(
   "/github/callback",
@@ -98,44 +112,6 @@ sessionsRouter.get(
     }
   }
 );
-
-//me
-sessionsRouter.post("/", passCallBack("jwt"), async (req, res, next) => {
-  try {
-    const user = {
-      email: req.user.email,
-      role: req.user.role,
-      photo: req.user.photo,
-    }
-    return res.json({
-      statusCode: 200,
-      response: user
-    })
-  } catch (error) {
-    return next(error);
-  }
-});
-
-//signout
-sessionsRouter.post(
-  "/signout",
-  /*   passport.authenticate("jwt", {
-    session: false,
-    failureRedirect: "/api/sessions/signout/cb",
-  }), */
-  passCallBack("jwt"),
-  async (req, res, next) => {
-    try {
-      return res.clearCookie("token").json({
-        statusCode: 200,
-        message: "Signed out!",
-      });
-    } catch (error) {
-      return next(error);
-    }
-  }
-);
-
 //badauth
 sessionsRouter.get("/badauth", (req, res, next) => {
   try {
@@ -147,7 +123,6 @@ sessionsRouter.get("/badauth", (req, res, next) => {
     return next(error);
   }
 });
-
 //signout/cb
 sessionsRouter.get("/signout/cb", (req, res, next) => {
   try {

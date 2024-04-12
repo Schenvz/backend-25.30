@@ -3,7 +3,6 @@ console.log("socket");
 const socket = io();
 
 socket.on("movies", (data) => {
-  //console.log(data);
   const template = data
     .map(
       (each) => `
@@ -32,6 +31,5 @@ document.querySelector("#newEvent").addEventListener("click", (event) => {
   capacity && (data.capacity = capacity);
   place && (data.place = place);
   date && (data.date = date);
-  //console.log(data);
   socket.emit("newMovie", data);
 });

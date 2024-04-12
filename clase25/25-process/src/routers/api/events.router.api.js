@@ -1,5 +1,4 @@
 import CustomRouter from "../CustomRouter.js";
-//import events from "../../data/fs/events.fs.js";
 import { events } from "../../data/mongo/manager.mongo.js";
 import isAdmin from "../../middlewares/isAdmin.mid.js";
 import passCallBackMid from "../../middlewares/passCallBack.mid.js";
@@ -8,14 +7,13 @@ export default class EventsRouter extends CustomRouter {
   init() {
     this.create(
       "/",
-      ["ADMIN","PREM"],
+      ["ADMIN", "PREM"],
       passCallBackMid("jwt"),
       isAdmin,
       async (req, res, next) => {
         try {
           const data = req.body;
           const response = await events.create(data);
-          //return res.json({ statusCode: 201, response });
           return res.success201(response);
         } catch (error) {
           return next(error);
@@ -55,7 +53,7 @@ export default class EventsRouter extends CustomRouter {
       }
     });
 
-    this.update("/:eid", ["ADMIN","PREM"], async (req, res, next) => {
+    this.update("/:eid", ["ADMIN", "PREM"], async (req, res, next) => {
       try {
         const { eid } = req.params;
         const data = req.body;
@@ -66,7 +64,7 @@ export default class EventsRouter extends CustomRouter {
       }
     });
 
-    this.destroy("/:eid", ["ADMIN","PREM"], async (req, res, next) => {
+    this.destroy("/:eid", ["ADMIN", "PREM"], async (req, res, next) => {
       try {
         const { eid } = req.params;
         const response = await events.destroy(eid);

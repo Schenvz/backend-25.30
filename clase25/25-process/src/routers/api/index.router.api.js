@@ -18,18 +18,10 @@ export default class ApiRouter extends CustomRouter {
     this.use("/sessions", sessionsRouter);
     this.read("/sum", ["PUBLIC"], async (req, res) => {
       try {
-        console.log("global process id: "+process.pid);
+        console.log("global process id: " + process.pid);
         const child = fork("./src/utils/sum.util.js");
         child.send("start");
         child.on("message", (result) => res.success200(result));
-        //const child1 = fork("./src/utils/sum.util.js");
-        //const child2 = fork("./src/utils/subtract.util.js");
-        //child1.send("start");
-        //child2.send("start");
-        //const results = {}
-        //child1.on("message", (result) => results.sum = result);
-        //child2.on("message", (result) => results.substract = result);
-        //return res.success200(results)
       } catch (error) {
         return next(error);
       }

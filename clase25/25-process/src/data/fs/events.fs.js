@@ -26,7 +26,7 @@ class EventsManager {
     try {
       const event = {
         id: crypto.randomBytes(12).toString("hex"),
-        title: data.title,
+        name: data.name,
         poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
         place: data.place,
         price: data.price || 10,
@@ -58,7 +58,7 @@ class EventsManager {
     try {
       const one = this.events.find((each) => each.id === id);
       if (!one) {
-        const error = new Error("there isn't event!");
+        const error = new Error("there isn't an event!");
         error.statusCode = 404;
         throw error;
       } else {

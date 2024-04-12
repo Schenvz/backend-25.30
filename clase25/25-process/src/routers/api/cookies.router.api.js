@@ -2,7 +2,7 @@ import { Router } from "express";
 
 const cookiesRouter = Router();
 
-//para setear cookies
+//set cookies
 cookiesRouter.get("/set/:modo", async (req, res, next) => {
   try {
     const { modo } = req.params;
@@ -13,32 +13,28 @@ cookiesRouter.get("/set/:modo", async (req, res, next) => {
       .cookie("sessionId", "hola1234", { maxAge, signed })
       .json({
         statusCode: 200,
-        message: "Cookie configurada - Modo: " + modo,
+        message: "Cookie configurada, Modo: " + modo,
       });
   } catch (error) {
     return next(error);
   }
 });
 
-//para leer cookies
+//read cookies
 cookiesRouter.get("/get", async (req, res, next) => {
   try {
     const modo = req.cookies.modo;
     const sessionId = req.signedCookies.sessionId;
-    return (
-      res
-        //.status(200)    //mientras no declare este método: la API es REST (stateless)
-        .json({
-          statusCode: 200,
-          response: { modo, sessionId },
-        })
-    );
+    return res.json({
+      statusCode: 200,
+      response: { modo, sessionId },
+    });
   } catch (error) {
     return next(error);
   }
 });
 
-//para eliminar cookies
+//delete cookies
 cookiesRouter.get("/clear", async (req, res, next) => {
   try {
     return res

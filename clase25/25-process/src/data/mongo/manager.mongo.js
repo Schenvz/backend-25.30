@@ -20,7 +20,7 @@ class MongoManager {
     try {
       const all = await this.model.paginate(filter, options);
       if (all.totalDocs === 0) {
-        const error = new Error("There aren't any document");
+        const error = new Error("There`s no document");
         error.statusCode = 404;
         throw error;
       }
