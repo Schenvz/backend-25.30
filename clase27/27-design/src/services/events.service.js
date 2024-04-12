@@ -1,4 +1,4 @@
-import { events } from "../data/mongo/manager.mongo.js";
+import { events } from "../manager.mongo.js";
 
 class EventsService {
   constructor() {

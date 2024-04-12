@@ -6,7 +6,7 @@ import {
   stats,
   update,
   destroy,
-} from "../../controllers/users.controller.js";
+} from "../../users.controller.js";
 
 class UsersRouter extends CustomRouter {
   init() {

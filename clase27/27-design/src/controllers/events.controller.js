@@ -1,4 +1,4 @@
-import service from "../services/events.service.js";
+import service from "../events.service.js";
 
 class EventsController {
   constructor() {

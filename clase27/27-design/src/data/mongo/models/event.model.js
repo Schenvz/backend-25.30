@@ -8,6 +8,7 @@ const schema = new Schema(
     poster: {
       type: String,
       default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
+      //utilizo la misma imagen porque no encontré otra similar ja
     },
     place: {
       type: String,

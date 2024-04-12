@@ -1,8 +1,8 @@
-import User from "./models/user.model.js";
-import Event from "./models/event.model.js";
-import Order from "./models/order.model.js";
-import Comment from "./models/comment.model.js";
-import notFoundOne from "../../utils/notFoundOne.util.js";
+import User from "./user.model.js";
+import Event from "./event.model.js";
+import Order from "./order.model.js";
+import Comment from "./comment.model.js";
+import notFoundOne from "../../notFoundOne.util.js";
 import { Types } from "mongoose";
 
 class MongoManager {

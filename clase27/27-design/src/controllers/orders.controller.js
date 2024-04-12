@@ -1,4 +1,4 @@
-import service from "../services/orders.service.js";
+import service from "../orders.service.js";
 
 class OrdersController {
   constructor() {
