@@ -8,7 +8,7 @@ body {
 }
 
 #background {
-  background-image: url("/fondo.webp");
+  background-image: url("./image1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
