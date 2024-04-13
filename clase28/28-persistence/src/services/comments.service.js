@@ -1,5 +1,5 @@
-import repository from "../repositories/comments.rep.js";
-import CommentDTO from "../dto/comment.dto.js";
+import repository from "../comments.rep.js";
+import CommentDTO from "../comment.dto.js";
 
 class CommentsService {
   constructor() {

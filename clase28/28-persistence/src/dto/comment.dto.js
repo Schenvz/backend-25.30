@@ -1,4 +1,4 @@
-import argsUtil from "../utils/args.util.js";
+import argsUtil from "../args.util.js";
 import crypto from "crypto";
 
 class CommentDTO {

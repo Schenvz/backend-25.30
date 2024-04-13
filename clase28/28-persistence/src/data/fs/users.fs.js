@@ -1,5 +1,5 @@
 import fs from "fs";
-import notFoundOne from "../../utils/notFoundOne.util.js";
+import notFoundOne from "../../notFoundOne.util.js";
 
 class UsersManager {
   init() {
@@ -31,9 +31,6 @@ class UsersManager {
     }
   }
   read({ filter, options }) {
-    //este metodo para ser compatible con las otras persistencias
-    //necesita agregar los filtros
-    //y la paginacion/orden
     try {
       if (this.users.length === 0) {
         const error = new Error("NOT FOUND!");

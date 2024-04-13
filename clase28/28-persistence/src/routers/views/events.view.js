@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import events from "../../data/mongo/events.mongo.js";
+import events from "../../events.mongo.js";
 
-import passCallBack from "../../middlewares/passCallBack.mid.js";
-import isAdmin from "../../middlewares/isAdmin.mid.js";
+import passCallBack from "../../passCallBack.mid.js";
+import isAdmin from "../../isAdmin.mid.js";
 
 const eventsRouter = Router();
 

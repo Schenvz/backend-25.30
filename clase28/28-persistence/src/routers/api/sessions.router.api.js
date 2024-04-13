@@ -1,6 +1,6 @@
 import CustomRouter from "../CustomRouter.js";
-import passport from "../../middlewares/passport.mid.js";
-import passCallBack from "../../middlewares/passCallBack.mid.js";
+import passport from "../../passport.mid.js";
+import passCallBack from "../../passCallBack.mid.js";
 import {
   register,
   login,
@@ -9,7 +9,7 @@ import {
   me,
   signout,
   badauth,
-} from "../../controllers/sessions.controller.js";
+} from "../../sessions.controller.js";
 
 class SessionsRouter extends CustomRouter {
   init() {

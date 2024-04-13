@@ -1,5 +1,5 @@
-import repository from "../repositories/orders.rep.js";
-import OrderDTO from "../dto/order.dto.js";
+import repository from "../orders.rep.js";
+import OrderDTO from "../order.dto.js";
 
 class OrdersService {
   constructor() {

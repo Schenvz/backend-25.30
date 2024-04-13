@@ -1,5 +1,5 @@
-import repository from "../repositories/users.rep.js";
-import UserDTO from "../dto/user.dto.js";
+import repository from "../users.rep.js";
+import UserDTO from "../user.dto.js";
 
 class UsersService {
   constructor() {

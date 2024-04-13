@@ -1,4 +1,4 @@
-import argsUtil from "../utils/args.util.js";
+import argsUtil from "../args.util.js";
 import crypto from "crypto";
 
 class UserDTO {
@@ -9,7 +9,7 @@ class UserDTO {
     this.password = data.password;
     this.name = data.name;
     this.lastName = data.lastName;
-    this.photo = data.photo || "https://i.postimg.cc/wTgNFWhR/profile.png";
+    this.photo = data.photo || "https://i.postimg.cc/wTgNFWhR/profile.png";//uso la mismaa
     this.age = data.age || 18;
     this.role = data.role || 0;
     argsUtil.env !== "prod" && (this.updatedAt = new Date());

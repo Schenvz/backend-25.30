@@ -1,5 +1,5 @@
-import repository from "../repositories/events.rep.js";
-import EventDTO from "../dto/event.dto.js";
+import repository from "../events.rep.js";
+import EventDTO from "../event.dto.js";
 
 class EventsService {
   constructor() {

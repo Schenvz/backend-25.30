@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import notFoundOne from "../../utils/notFoundOne.util.js";
+import notFoundOne from "../../notFoundOne.util.js";
 
 class EventsManager {
   static #users = [];
@@ -10,10 +10,10 @@ class EventsManager {
       const event = {
         id: crypto.randomBytes(12).toString("hex"),
         title: data.title,
-        poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
+        poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",//utilizo la misma
         place: data.place,
-        price: data.price || 10,
-        capacity: data.capacity || 50,
+        price: data.price || 12,
+        capacity: data.capacity || 100,
         date: data.date || new Date(),
       };
       EventsManager.#users.push(event);
@@ -23,9 +23,6 @@ class EventsManager {
     }
   }
   read({ filter, options }) {
-    //este metodo para ser compatible con las otras persistencias
-    //necesita agregar los filtros
-    //y la paginacion/orden
     try {
       if (EventsManager.#users.length === 0) {
         const error = new Error("NOT FOUND!");

@@ -5,7 +5,7 @@ import {
   readOne,
   update,
   destroy,
-} from "../../controllers/comments.controller.js";
+} from "../../comments.controller.js";
 
 class CommentsRouter extends CustomRouter {
   init() {

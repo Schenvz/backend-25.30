@@ -4,7 +4,7 @@ import {
   read,
   update,
   destroy,
-} from "../../controllers/orders.controller.js";
+} from "../../orders.controller.js";
 
 class OrdersRouter extends CustomRouter {
   init() {

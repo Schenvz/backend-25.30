@@ -8,6 +8,7 @@ const schema = new Schema(
     poster: {
       type: String,
       default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
+      //utilizo la misma imagen porque no encontré otra similar ja
     },
     place: {
       type: String,
@@ -15,8 +16,8 @@ const schema = new Schema(
       enum: ["Hoyts", "Showcase", "Village", "Stadium"],
       index: true,
     },
-    price: { type: Number, default: 10 },
-    capacity: { type: Number, default: 50 },
+    price: { type: Number, default: 12 },
+    capacity: { type: Number, default: 100 },
     date: { type: Date, default: new Date(), index: true },
   },
   { timestamps: true }

@@ -1,5 +1,5 @@
-import EventDTO from "../dto/event.dto.js";
-import dao from "../data/index.factory.js";
+import EventDTO from "../event.dto.js";
+import dao from "../index.factory.js";
 
 const { events } = dao;
 

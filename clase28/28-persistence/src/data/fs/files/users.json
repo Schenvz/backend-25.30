@@ -1,31 +1,31 @@
 [
   {
-    "_id": "c333a95441a5811a4024a044",
-    "email": "jp@coder.com",
-    "password": "$2b$10$Z88.zqA0Wg.6/RMTnDeibeRkeka2GaU8Lk66JKiyL.AloekwYykdS",
-    "name": "jp",
-    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png",
+    "_id": "4189353eab0c89a76a9368e8cea7",
+    "name": "lucas",
+    "email": "lucas@yahuu.com",
+    "password": "$a2GaU8Lk66JK2b$10$Z88.zqA0Wg.6/RMTnDeibeRkekiyL.AloekwYykdS",
+    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png"
     "age": 18,
     "role": 1,
-    "updatedAt": "2024-03-18T01:18:47.624Z",
-    "createdAt": "2024-03-18T01:18:47.624Z"
+    "updatedAt": "2024-03-25T01:18:47.624Z",
+    "createdAt": "2024-03-25T01:18:47.624Z"
   },
   {
-    "_id": "eadd1dd1bab5d27d580dbc30",
-    "email": "igna@coder.com",
-    "password": "$2b$10$cTBoHX.nTKatfmRLXZbJ8eo1YKABGpAMtJpWsXv1UIMkKx0UW2ymO",
-    "name": "igna",
-    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png",
+    "_id": "85e022189a76a9368d043f",
+    "name": "axel",
+    "email": "alex@drw.com",
+    "password": "a2GaU8Lk66JK88.zqA0Wg.6/RMTnDeibeRkeka2GaU8Lk6a2GaU8Lk66JKL.AloekwYykdS",
+    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png"
     "age": 18,
-    "role": 0,
-    "updatedAt": "2024-03-18T01:18:55.144Z",
-    "createdAt": "2024-03-18T01:18:55.144Z"
-  },
+    "role": 1,
+    "updatedAt": "2024-03-25T01:18:47.624Z",
+    "createdAt": "2024-03-25T01:18:47.624Z"
+  }
   {
-    "_id": "c330df10596050dbfbfc8351",
-    "email": "sol@coder.com",
-    "password": "$2b$10$ffsEk4LBh3QZgkCFK8xpgeYDNUj2gegxvPxYUkVMPeFf7XwRvzcDy",
-    "name": "sol",
+    "_id": "c3059605306050dbfbfc05960551",
+    "email": "marco@coder.com",
+    "password": "$2b$10$ffsEk4LBha2GaU8Lk66JKxpgeYDNUj2gegxvPxYUkVMPeFf7XwRvzcDa2GaU8Lk66JKy",
+    "name": "marco",
     "photo": "https://i.postimg.cc/wTgNFWhR/profile.png",
     "age": 18,
     "role": 0,

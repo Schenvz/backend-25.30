@@ -12,6 +12,7 @@ const schema = new Schema(
 );
 
 schema.plugin(mongoosePaginate);
+//schema.plugin(mongoose);
 schema.pre("find", function () {
   this.populate("user_id", "-password -createdAt -updatedAt -__v");
 });

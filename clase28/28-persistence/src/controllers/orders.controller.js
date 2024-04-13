@@ -1,4 +1,4 @@
-import service from "../services/orders.service.js";
+import service from "../orders.service.js";
 
 class OrdersController {
   constructor() {
@@ -35,6 +35,18 @@ class OrdersController {
       return next(error);
     }
   };
+  report = async (req, res, next) => {
+    try {
+      const { uid } = req.params;
+      const report = await this.service.reportBill(uid);
+      return res.json({
+        statusCode: 200,
+        response: report,
+      });
+    } catch (error) {
+      return next(error);
+    }
+  }
   update = async (req, res, next) => {
     try {
       const { oid } = req.params;
@@ -58,5 +70,5 @@ class OrdersController {
 
 export default OrdersController;
 const controller = new OrdersController();
-const { create, read, update, destroy } = controller;
-export { create, read, update, destroy };
+const { create, read, report, update, destroy } = controller;
+export { create, read, report, update, destroy };

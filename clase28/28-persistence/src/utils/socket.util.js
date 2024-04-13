@@ -1,5 +1,5 @@
 import { socketServer } from "../../server.js";
-import events from "../data/fs/events.fs.js";
+import events from "../events.fs.js";
 import propsEventsUtils from "./propsEvents.util.js";
 
 export default (socket) => {
@@ -12,7 +12,6 @@ export default (socket) => {
       socketServer.emit("movies", events.readEvents());
     } catch (error) {
       console.log(error);
-      //emitir al cliente un mensaje de alerta
     }
   });
 };

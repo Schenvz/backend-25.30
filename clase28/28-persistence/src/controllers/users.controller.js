@@ -1,4 +1,4 @@
-import service from "../services/users.service.js";
+import service from "../users.service.js";
 
 class UsersController {
   constructor() {
@@ -29,6 +29,15 @@ class UsersController {
         options.sort.title = "desc";
       }
       const all = await this.service.read({ filter, options });
+      return res.success200(all);
+    } catch (error) {
+      return next(error);
+    }
+  };
+  stats = async (req, res, next) => {
+    try {
+      const id = req.user._id;
+      const all = await this.service.stats(id);
       return res.success200(all);
     } catch (error) {
       return next(error);
@@ -66,5 +75,5 @@ class UsersController {
 
 export default UsersController;
 const controller = new UsersController();
-const { create, read, readOne, update, destroy } = controller;
-export { create, read, readOne, update, destroy };
+const { create, read, stats, readOne, update, destroy } = controller;
+export { create, read, stats, readOne, update, destroy };

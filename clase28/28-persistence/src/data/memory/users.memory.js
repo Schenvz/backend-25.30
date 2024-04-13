@@ -14,7 +14,7 @@ class UsersManager {
         id: crypto.randomBytes(12).toString("hex"),
         name: data.name,
         email: data.email,
-        photo: data.photo || "https://i.postimg.cc/wTgNFWhR/profile.png",
+        photo: data.photo || "https://i.postimg.cc/wTgNFWhR/profile.png",//la misma
       };
       UsersManager.#users.push(user);
       return user.id;

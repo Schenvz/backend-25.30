@@ -55,7 +55,6 @@ class MongoManager {
             currency: "USD",
           },
         },
-        //{ $merge: { into: "bills" }}
       ]);
       return report;
     } catch (error) {

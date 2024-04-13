@@ -1,8 +1,8 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-import dao from "../data/index.factory.js";
-import errors from "../utils/errors/errors.js";
-import CustomError from "../utils/errors/CustomError.js";
+import dao from "../index.factory.js";
+import errors from "../errors.js";
+import CustomError from "../CustomError.js";
 const { users } = dao;
 
 export default class CustomRouter {
@@ -15,12 +15,11 @@ export default class CustomRouter {
   }
   init() {}
   applyCbs(cbs) {
-    //cbs es un array de callbacks (por ejemplo todos los middlewares que necesita el endpoint /api/sessions/signout)
     return cbs.map((each) => async (...params) => {
       try {
         await each.apply(this, params);
       } catch (error) {
-        /* return */ params[1].json({
+        params[1].json({
           statusCode: 500,
           message: error.message,
         });
@@ -32,13 +31,9 @@ export default class CustomRouter {
       res.json({ statusCode: 200, response: payload });
     res.success201 = (payload) =>
       res.json({ statusCode: 201, response: payload });
-    //res.error400 = (message) => res.json({ statusCode: 400, message });
     res.error400 = () => CustomError.new(errors.error);
-    //res.error401 = () => res.json({ statusCode: 401, message: "Bad auth!" });
     res.error401 = () => CustomError.new(errors.auth);
-    //res.error403 = () => res.json({ statusCode: 403, message: "Forbidden!" });
     res.error403 = () => CustomError.new(errors.forbidden);
-    //res.error404 = () => res.json({ statusCode: 404, message: "Not found!" });
     res.error404 = () => CustomError.new(errors.notFound);
     return next();
   };

@@ -1,10 +1,10 @@
 <main class="flex-grow-1 w-100 d-flex flex-column">
-  <h2 class="subtitle mt-4 mb-2 text-center">MY CART</h2>
+  <h2 class="subtitle mt-4 mb-2 text-center">Mi carrito</h2>
   {{#if message}}
-    message
+    msg
   {{else}}
     <section
-      id="movies"
+      id="clothes"
       class="d-flex flex-column justify-content-center align-items-center m-auto mt-2 mb-4 bg-light"
       style="width: 360px;"
     >
@@ -13,32 +13,32 @@
         <p
           style="width: 100px;"
           class="d-flex justify-content-start align-items-center m-0 p-2 fw-bold"
-        >Title</p>
+        >Titulo</p>
         <p
           style="width: 100px;"
           class="d-flex justify-content-end align-items-center m-0 p-2 fw-bold"
-        >Price</p>
+        >Precio</p>
         <p style="width: 60px;" class="m-0 p-2 fw-bold"></p>
       </article>
       {{#each orders}}
         <article class="w-100 d-flex border border-danger">
           <img
-            src={{this.event_id.poster}}
+            src={{this.clothes_id.poster}}
             style="width: 100px; heigth: 100px"
             style="height: 100px; width: 100px"
             class="object-fit-cover m-0"
-            alt="{{this.event_id.title}}"
+            alt="{{this.clothes_id.title}}"
           />
           <p
             class="d-flex justify-content-start align-items-center m-0 p-2"
             style="width: 100px;"
-          >{{this.event_id.title}}
+          >{{this.clothes_id.title}}
             <br />
-            {{this.event_id.place}}</p>
+            {{this.clothes_id.place}}</p>
           <p
             class="d-flex justify-content-end align-items-center m-0 p-2"
             style="width: 100px;"
-          >USD {{this.event_id.price}}</p>
+          >USD {{this.clothes_id.price}}</p>
           <span
             class="d-flex justify-content-center align-items-center m-0 p-2"
             style="width: 60px;"
@@ -57,15 +57,15 @@
         <a
           class="btn btn-danger fs-5 m-4 mt-0"
           href="/?title={{filter}}&page={{prev}}"
-        >PREV</a>
+        >Anterior</a>
       {{/if}}
       {{#if next}}
         <a
           class="btn btn-danger fs-5 m-4 mt-0"
           href="/?title={{filter}}&page={{next}}"
-        >NEXT</a>
+        >Siguiente</a>
       {{/if}}
     </span>
   {{/if}}
 </main>
-<script src="/scripts/orders.js"></script>
+<script src="../../public/scripts/orders.js"></script>

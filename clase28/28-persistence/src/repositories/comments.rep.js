@@ -1,5 +1,5 @@
-import CommentDTO from "../dto/comment.dto.js";
-import dao from "../data/index.factory.js";
+import CommentDTO from "../comment.dto.js";
+import dao from "../index.factory.js";
 
 const { comments } = dao;
 

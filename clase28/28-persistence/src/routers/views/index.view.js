@@ -1,6 +1,6 @@
 import CustomRouter from "../CustomRouter.js";
 
-import events from "../../data/mongo/events.mongo.js";
+import events from "../../events.mongo.js";
 
 import eventsRouter from "./events.view.js";
 import sessionsRouter from "./sessions.view.js";

@@ -1,5 +1,5 @@
 import fs from "fs";
-import notFoundOne from "../../utils/notFoundOne.util.js";
+import notFoundOne from "../../notFoundOne.util.js";
 
 class CommentsManager {
   init() {
@@ -31,9 +31,6 @@ class CommentsManager {
     }
   }
   read({ filter, options }) {
-    //este metodo para ser compatible con las otras persistencias
-    //necesita agregar los filtros
-    //y la paginacion/orden
     try {
       if (this.comments.length === 0) {
         const error = new Error("NOT FOUND!");
@@ -60,19 +57,6 @@ class CommentsManager {
       throw error;
     }
   }
-  async update(eid, data) {
-    try {
-      const one = this.readOne(eid);
-      notFoundOne(one)
-      for (let each in data) {
-        one[each] = data[each]
-      }
-      const jsonData = JSON.stringify(this.comments, null, 2);
-      await fs.promises.writeFile(this.path, jsonData);
-      return one;
-    } catch (error) {
-      throw error;
-    }
   }
   async destroy(id) {
     try {
@@ -86,6 +70,19 @@ class CommentsManager {
       throw error;
     }
   }
+  async update(eid, data) {
+    try {
+      const one = this.readOne(eid);
+      notFoundOne(one)
+      for (let each in data) {
+        one[each] = data[each]
+      }
+      const jsonData = JSON.stringify(this.comments, null, 2);
+      await fs.promises.writeFile(this.path, jsonData);
+      return one;
+    } catch (error) {
+      throw error;
+    }
 }
 
 const comments = new CommentsManager("./src/data/fs/files/comments.json");
