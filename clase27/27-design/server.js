@@ -1,4 +1,4 @@
-import env from "./src/utils/env.util.js"
+import env from "./env.util.js"
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -7,7 +7,7 @@ import { engine } from "express-handlebars";
 import cookieParser from "cookie-parser";
 import expressSession from "express-session";
 import sessionFileStore from "session-file-store";
-import args from "./src/utils/args.util.js"
+import args from "./args.util.js"
 
 import socketUtils from "./src/utils/socket.util.js";
 
