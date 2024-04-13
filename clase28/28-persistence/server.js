@@ -1,4 +1,4 @@
-import env from "./src/utils/env.util.js";
+import env from "./env.util.js";
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -7,7 +7,7 @@ import { engine } from "express-handlebars";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import compression from "express-compression"
-import socketUtils from "./src/utils/socket.util.js";
+import socketUtils from "./socket.util.js";
 
 import router from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.js";
@@ -19,8 +19,6 @@ const server = express();
 const PORT = env.PORT || 8080;
 const ready = () => {
   console.log("server ready on port " + PORT);
-  //la conexión a la base de datos de mongo
-  //deberia configurar SOLO si la persistencia es en mongo
 };
 const httpServer = createServer(server);
 const socketServer = new Server(httpServer);
