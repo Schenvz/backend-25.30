@@ -1,4 +1,4 @@
-import repository from "../repositories/notes.rep.js";
+import repository from "../repositories/notes.rep";
 
 class NotesService {
   constructor() {

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import notesRouter from "./notes.router.api.js";
-import authRouter from "./auth.router.api.js";
+import notesRouter from "../api/notes.router.api.js";
+import authRouter from "../api/auth.router.api.js";
 
 const apiRouter = Router();
 
