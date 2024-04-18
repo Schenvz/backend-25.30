@@ -20,3 +20,4 @@ class UsersService {
 
 const service = new UsersService();
 export default service;
+
