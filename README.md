@@ -1,4 +1,4 @@
-Clases 25 a 30. 
+Clases 25 a 35. 
 Trabajos:     
 
 clase 27 - Arquitectura del servidor: Diseño,
