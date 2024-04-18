@@ -7,7 +7,9 @@ clase 27 - Arquitectura del servidor: Diseño,
 
 clase 30 - Mailing y mensajería,
 
-cllase 32 - Mocking y manejo de errores,
+clase 32 - Mocking y manejo de errores,
+
+clase 34 - Implementación de logger
 ### NODE
 ### EXPRESS
 ### DOTENV
