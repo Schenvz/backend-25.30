@@ -6,3 +6,5 @@
 ### HANDLEBARS
 ### SOCKET
 ### MONGOOSE
+
+clase 34 - Implementación de logger

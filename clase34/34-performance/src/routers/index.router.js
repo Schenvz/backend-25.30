@@ -1,5 +1,5 @@
 import { Router } from "express";
-import apiRouter from "./api/index.router.api.js";
+import apiRouter from "../api/index.router.api.js";
 import sendSms from "../utils/sendSms.utils.js";
 
 const router = Router();
