@@ -6,7 +6,7 @@ const createToken = (data) =>
 const verifyToken = (headers) => {
   const token = headers.token;
   if (!token) {
-    const error = new Error("bad auth");
+    const error = new Error("bad auth!");
     error.statusCode = 401;
     throw error;
   }

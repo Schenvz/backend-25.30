@@ -1,5 +1,5 @@
-import UserDTO from "../dto/user.dto.js";
-import dao from "../dao/index.dao.js";
+import UserDTO from "../user.dto.js";
+import dao from "../index.dao.js";
 
 const { users } = dao;
 

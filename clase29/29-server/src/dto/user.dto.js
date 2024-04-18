@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { createHash } from "../utils/hash.utils.js";
+import { createHash } from "../hash.utils.js";
 
 class UserDTO {
   constructor(data) {
