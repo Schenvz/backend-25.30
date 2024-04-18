@@ -4,9 +4,9 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import router from "./index.router.js";
-import errorHandler from "./errorHandler.js";
-import pathHandler from "./pathHandler.js";
+import router from "./src/routers/index.router.js";
+import errorHandler from "./src/middlewares/errorHandler.js";
+import pathHandler from "./src/middlewares/pathHandler.js";
 
 //server
 const server = express();
