@@ -7,4 +7,4 @@
 ### SOCKET
 ### MONGOOSE
 
-clase 32
+clase 31
