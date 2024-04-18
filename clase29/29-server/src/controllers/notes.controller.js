@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import service from "../notes.service.js";
+=======
+import service from "../../services/notes.service.js";
+>>>>>>> 9d9721b35ab7726089a4d3b2df33f73504cab1e6
 
 class NotesController {
   constructor() {

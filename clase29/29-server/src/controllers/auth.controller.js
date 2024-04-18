@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import service from "../users.service.js";
+=======
+import service from "../../services/users.service.js";
+>>>>>>> 9d9721b35ab7726089a4d3b2df33f73504cab1e6
 
 class AuthController {
   constructor() {
